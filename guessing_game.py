@@ -42,8 +42,8 @@ def guessing_game2():
             print('Выберите другое слово!')
 
 
-# guessing_game2()
-# # guessing_game()
+guessing_game2()
+guessing_game()
 
 input_number = int(input('Введите число: '))
 input_base = int(input('Введите систему счисления: '))
