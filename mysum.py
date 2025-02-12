@@ -10,9 +10,17 @@ def mysum(*numbers, start=0):
     return sum, mean
 
 
+def mysum_2(*elements):
+    result = elements[0]
+    for element in elements[1:]:
+        result += element
+    return result
+
+
 test_data = [x for x in range(0, 50, 3)]
 # print(mysum(*test_data))
 # print(mysum(*test_data, 7))
+# print(mysum_2(test_data, test_data))
 
 
 def words_analiz(*words):
@@ -43,4 +51,30 @@ def random_words():
     return result
 
 
-print(words_analiz(*random_words()))
+# print(words_analiz(*random_words()))
+# print(mysum_2(*random_words(), *random_words()))
+
+
+def mysum_bigger_than(border, *elements):
+    result = border
+    for element in elements:
+        if element > border:
+            result += element
+    return result
+
+
+# print(mysum_bigger_than('j', *random_words()))
+# print(mysum_bigger_than(10, 5, 20, 30, 6))
+
+
+def sum_numeric(*elements):
+    sum = 0
+    for element in elements:
+        try:
+            sum += int(element)
+        except ValueError:
+            continue
+    return sum
+
+
+print(sum_numeric(*random_words(), *test_data))
